@@ -17,15 +17,14 @@ const App = () => {
   const searchFilter = (searchString) => {
       setPostData(dummyData);
       setPostData(dummyData.filter((p)=>{
-          console.log(p);
-          return (p.username.includes(searchString) || commentsInclude(p.comments,searchString));
+          return (p.username.toLowerCase().includes(searchString.toLowerCase()) || commentsInclude(p.comments,searchString));
       }));
   };
 
   const commentsInclude = (comments, searchString) => {
       let testCase = false;
       comments.forEach((comment)=>{
-        if (comment.username.includes(searchString) || comment.text.includes(searchString)) {
+        if (comment.username.toLowerCase().includes(searchString.toLowerCase()) || comment.text.toLowerCase().includes(searchString.toLowerCase())) {
             testCase = true;
         }});
       return testCase;
