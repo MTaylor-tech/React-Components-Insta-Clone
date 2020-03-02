@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import Post from "./Post";
 import "./Posts.css";
 // import data
-import dummyData from "../../dummy-data.js";
+//import dummyData from "../../dummy-data.js";
 
-const PostsPage = () => {
+const PostsPage = (props) => {
   // set up state for your data
   return (
     <div className="posts-container-wrapper">
-      {dummyData.map(item=>{return <Post post={item} />})}
+      {props.posts.map(item=>{return <Post post={item} />})}
     </div>
   );
 };

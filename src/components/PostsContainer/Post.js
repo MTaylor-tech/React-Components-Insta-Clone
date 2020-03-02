@@ -12,7 +12,6 @@ const Post = props => {
 
   const addLike = () => { setLikes(likes + 1)};
   // set up state for the likes
-  console.log(props);
 
   return (
     <div className="post-border">
