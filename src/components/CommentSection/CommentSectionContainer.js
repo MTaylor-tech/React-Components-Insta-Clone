@@ -1,5 +1,5 @@
 // You will add code to this file
-import React, { useState, createRef } from "react";
+import React, { useState } from "react";
 import CommentInput from "./CommentInput";
 import Comment from "./Comment";
 import "./Comment.css";
@@ -25,7 +25,7 @@ const CommentSection = props => {
     <div>
       {/* map through the comments data and return the Comment component */}
       {props.comments.map(item=>{return <Comment comment={item} />})}
-      {userComment===undefined?'':<Comment comment={userComment} />}
+      {userComment.username===''?'':<Comment comment={userComment} />}
       <CommentInput changeComment={editComment} submitComment={addComment} comment={userCommentText} />
     </div>
   );
